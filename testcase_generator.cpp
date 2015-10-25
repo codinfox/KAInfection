@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
   
   for (int i = 0; i < sz; i++) {
     if (cstyle) cout << "User(" << i << ",{";
-    else cout << i << " ";
+    else cout << i << ",";
     size_t ss = v[i].size();
     for (auto uu : v[i]) {
       cout << uu;
