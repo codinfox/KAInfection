@@ -93,13 +93,13 @@ T KVector<T>::randomPick(Pred const& pred) {
     if (sz == 0) return T();
     std::srand((unsigned int)std::time(0));
     size_t index;
-    size_t counter = 20; // maximum number of trails
+    ssize_t counter = 20; // maximum number of trails
     do {
         index = std::rand() % sz;
-    } while (counter-- &&
+    } while (--counter > 0 &&
              ((std::find(freeSlots.begin(), freeSlots.end(), index) != freeSlots.end()) ||
              !pred(container[index])));
-    if (counter) return container[index];
+    if (counter > 0) return container[index];
     return T();
 }
 #endif /* KVector_hpp */

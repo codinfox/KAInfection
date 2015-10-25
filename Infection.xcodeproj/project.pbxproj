@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B516F3251BDD880D00A3BD42 /* UserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB3F1BDB26210003210B /* UserGraph.cpp */; };
 		B579CB411BDB26210003210B /* UserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB3F1BDB26210003210B /* UserGraph.cpp */; settings = {ASSET_TAGS = (); }; };
 		B579CB4F1BDC37F80003210B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB4E1BDC37F80003210B /* main.cpp */; };
 		B579CB541BDC3AE40003210B /* testUserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB531BDC3AE40003210B /* testUserGraph.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -207,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B516F3251BDD880D00A3BD42 /* UserGraph.cpp in Sources */,
 				B579CB571BDC3B3B0003210B /* testKVector.cpp in Sources */,
 				B579CB4F1BDC37F80003210B /* main.cpp in Sources */,
 				B579CB541BDC3AE40003210B /* testUserGraph.cpp in Sources */,
@@ -349,6 +351,7 @@
 				B579CB521BDC37F80003210B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B58B730B1BDB226A00F2B4BE /* Build configuration list for PBXProject "Infection" */ = {
 			isa = XCConfigurationList;
