@@ -9,18 +9,23 @@
 #ifndef Infection_hpp
 #define Infection_hpp
 
+#include <string>
+#include <vector>
 #include "UserGraph.hpp"
 
 class Infection {
     UserGraph userGraph;
+    bool initialized = false;
     
-    Infection();
+    Infection() {};
     Infection(Infection const &) = delete;
     void operator=(Infection const &) = delete;
 public:
-    static Infection const & instance();
-    vector<user_id> total_infection(user_id identifier);
-    vector<user_id> limited_infection(size_t amount);
+    static Infection & instance();
+    void initialize(string const& path);
+    
+    std::vector<user_id> total_infection(user_id identifier);
+    std::vector<user_id> limited_infection(size_t amount);
 };
 
 #endif /* Infection_hpp */
