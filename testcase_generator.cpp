@@ -5,12 +5,18 @@
 #include <cstdlib>
 #include <cmath>
 #include <algorithm>
+#include <cstring>
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
   int sz = 1000;
-  if (argc > 1) sz = atoi(argv[1]);
+  bool cstyle = true;
+  if (argc >= 2) sz = atoi(argv[1]);
+  if (argc > 2 && strcmp(argv[2], "file") == 0) {
+    cstyle = false;
+  }
+  
   vector<unordered_set<int> > v(sz);
   srand(time(0));
   int amount = 0;
@@ -28,13 +34,19 @@ int main(int argc, char *argv[]) {
   }
   
   for (int i = 0; i < sz; i++) {
-    cout << "User(" << i << ",{";
+    if (cstyle) cout << "User(" << i << ",{";
+    else cout << i << " ";
     size_t ss = v[i].size();
     for (auto uu : v[i]) {
       cout << uu;
       if (--ss != 0) cout << ",";
     }
-    cout << "})";
-    if (i != sz-1) cout << ",";
+    if (cstyle) {
+      cout << "})";
+      if (i != sz-1) cout << ",";
+    } else {
+      cout << endl;
+    }
+    
   }
 }
