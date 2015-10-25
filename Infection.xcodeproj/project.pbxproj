@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B516F3251BDD880D00A3BD42 /* UserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB3F1BDB26210003210B /* UserGraph.cpp */; };
+		B51AA95C1BDDA2B00048606A /* testInfection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B51AA95B1BDDA2B00048606A /* testInfection.cpp */; settings = {ASSET_TAGS = (); }; };
 		B579CB411BDB26210003210B /* UserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB3F1BDB26210003210B /* UserGraph.cpp */; settings = {ASSET_TAGS = (); }; };
 		B579CB4F1BDC37F80003210B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB4E1BDC37F80003210B /* main.cpp */; };
 		B579CB541BDC3AE40003210B /* testUserGraph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B579CB531BDC3AE40003210B /* testUserGraph.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		B516F3271BDD90F400A3BD42 /* UseBeforeInitialization.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UseBeforeInitialization.hpp; sourceTree = "<group>"; };
+		B51AA95B1BDDA2B00048606A /* testInfection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testInfection.cpp; sourceTree = "<group>"; };
 		B579CB3F1BDB26210003210B /* UserGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserGraph.cpp; sourceTree = "<group>"; };
 		B579CB401BDB26210003210B /* UserGraph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UserGraph.hpp; sourceTree = "<group>"; };
 		B579CB461BDBFAB10003210B /* KVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KVector.hpp; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				B579CB4E1BDC37F80003210B /* main.cpp */,
 				B579CB531BDC3AE40003210B /* testUserGraph.cpp */,
 				B579CB561BDC3B3B0003210B /* testKVector.cpp */,
+				B51AA95B1BDDA2B00048606A /* testInfection.cpp */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				B579CB571BDC3B3B0003210B /* testKVector.cpp in Sources */,
 				B579CB4F1BDC37F80003210B /* main.cpp in Sources */,
 				B579CB541BDC3AE40003210B /* testUserGraph.cpp in Sources */,
+				B51AA95C1BDDA2B00048606A /* testInfection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
