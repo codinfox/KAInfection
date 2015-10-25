@@ -48,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B516F3271BDD90F400A3BD42 /* UseBeforeInitialization.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UseBeforeInitialization.hpp; sourceTree = "<group>"; };
 		B579CB3F1BDB26210003210B /* UserGraph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserGraph.cpp; sourceTree = "<group>"; };
 		B579CB401BDB26210003210B /* UserGraph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UserGraph.hpp; sourceTree = "<group>"; };
 		B579CB461BDBFAB10003210B /* KVector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KVector.hpp; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				B579CB461BDBFAB10003210B /* KVector.hpp */,
+				B516F3271BDD90F400A3BD42 /* UseBeforeInitialization.hpp */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

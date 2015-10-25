@@ -9,6 +9,7 @@
 #include <queue>
 #include <algorithm>
 #include "UserGraph.hpp"
+#include "UseBeforeInitialization.hpp"
 
 UserGraph::UserGraph(vector<User> const & graph) {
     importFromORM(graph);
@@ -57,10 +58,12 @@ size_t UserGraph::findAisle(size_t amount) {
 }
 
 unordered_set<user_id> UserGraph::findClusterByUser(user_id userID) {
+    if (!initialized) throw UseBeforeInitializationException();
     return clusters[users[userID].cluster];
 }
 
 unordered_set<user_id> UserGraph::findClusterByAmount(size_t amount) {
+    if (!initialized) throw UseBeforeInitializationException();
     unordered_set<user_id> rtnValue;
     unordered_set<size_t> clustersChosen;
     ssize_t innerAmount = amount;
