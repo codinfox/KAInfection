@@ -69,18 +69,20 @@ namespace KA {
         std::unordered_set<user_id> rtnValue;
         std::unordered_set<size_t> clustersChosen;
         ssize_t innerAmount = amount;
-        /* To be more precise, we can start with the little end or pick circularly */
-        size_t start = findAisle(amount);
-        for (ssize_t index = start; index >= 0 && innerAmount > 0; index --) {
-            while (innerAmount > 0) {
-                ClusterMapping mapping = aisles[index].randomPick([&clustersChosen](ClusterMapping const& m){
-                    return clustersChosen.count(m.clusterID) == 0;
-                });
-                if (mapping.amount == 0) break;
-                clustersChosen.insert(mapping.clusterID);
-                rtnValue.insert(clusters[mapping.clusterID].begin(), clusters[mapping.clusterID].end());
-                innerAmount -= mapping.amount;
+        ssize_t index = findAisle(innerAmount); // which aisle does the query belongs to
+        while (index >= 0 && innerAmount > 0) {
+            ClusterMapping mapping = aisles[index].randomPick([&clustersChosen](ClusterMapping const& m){
+                return clustersChosen.count(m.clusterID) == 0;
+            });
+            if (mapping.amount == 0) {
+                // We have exhausted the current aisle (there's no unvisited clusters in current aisle)
+                index --; // use a smaller one
+                continue;
             }
+            clustersChosen.insert(mapping.clusterID);
+            rtnValue.insert(clusters[mapping.clusterID].begin(), clusters[mapping.clusterID].end());
+            innerAmount -= mapping.amount;
+            index = std::min(index, (ssize_t)findAisle(innerAmount));
         }
         return rtnValue;
     }
