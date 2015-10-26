@@ -10,6 +10,8 @@
 #include "KVector.hpp"
 #include <unordered_set>
 #include <utility>
+using namespace std;
+using namespace KA;
 
 SCENARIO("Common use of KVectors", "[utils]") {
     GIVEN("the value is of primitive type") {

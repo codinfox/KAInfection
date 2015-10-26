@@ -8,6 +8,8 @@
 
 #include "catch.hpp"
 #include "UserGraph.hpp"
+using namespace std;
+using namespace KA;
 
 SCENARIO("Common usage of UserGraph", "[feature]") {
     GIVEN("a user graph with 5 users") {

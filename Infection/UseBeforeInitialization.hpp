@@ -11,12 +11,13 @@
 
 #include <exception>
 
-class UseBeforeInitializationException : std::exception {
-public:
-    const char * what() {
-        return "The class is used before initialization";
-    }
-};
-
+namespace KA {
+    class UseBeforeInitializationException : std::exception {
+    public:
+        const char * what() {
+            return "The class is used before initialization";
+        }
+    };
+}
 
 #endif /* UseBeforeInitialization_hpp */

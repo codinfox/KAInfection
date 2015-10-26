@@ -11,33 +11,34 @@
 #include <string>
 #include <cstdlib>
 #include "Infection.hpp"
+using namespace KA;
 
 int main(int argc, const char * argv[]) {
     if (argc != 2) return 1;
     Infection::instance().initialize(argv[1]);
     std::string buf;
-    cout << "Incremental Service Console" << endl;
-    cout << "DB file: " << argv[1] << endl;
-    cout << "** We assume ALL OPERATIONS ARE LEGAL **" << endl;
+    std::cout << "Incremental Service Console" << std::endl;
+    std::cout << "DB file: " << argv[1] << std::endl;
+    std::cout << "** We assume ALL OPERATIONS ARE LEGAL **" << std::endl;
     while (true) {
-        cout << "> ";
-        cin >> buf;
+        std::cout << "> ";
+        std::cin >> buf;
         if (buf[0] == 'l') {
             size_t amount = atol(buf.c_str()+1);
             auto limit = Infection::instance().limited_infection(amount);
             for (auto l : limit) {
-                cout << l << " ";
+                std::cout << l << " ";
             }
         } else if (buf[0] == 't') {
             size_t user_id = atol(buf.c_str()+1);
             auto total = Infection::instance().total_infection(user_id);
             for (auto t : total) {
-                cout << t << " ";
+                std::cout << t << " ";
             }
         } else {
             break;
         }
-        cout << endl;
+        std::cout << std::endl;
     }
     return 0;
 }
