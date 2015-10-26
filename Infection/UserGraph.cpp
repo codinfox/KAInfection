@@ -70,7 +70,8 @@ namespace KA {
         std::unordered_set<size_t> clustersChosen;
         ssize_t innerAmount = amount;
         /* To be more precise, we can start with the little end or pick circularly */
-        for (ssize_t index = total_aisles - 1; index >= 0 && innerAmount > 0; index --) {
+        size_t start = findAisle(amount);
+        for (ssize_t index = start; index >= 0 && innerAmount > 0; index --) {
             while (innerAmount > 0) {
                 ClusterMapping mapping = aisles[index].randomPick([&clustersChosen](ClusterMapping const& m){
                     return clustersChosen.count(m.clusterID) == 0;
