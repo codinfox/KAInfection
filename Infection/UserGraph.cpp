@@ -23,6 +23,7 @@ void UserGraph::importFromORM(const vector<User> &graph) {
 }
 
 void UserGraph::clustering() {
+    /* We first BFS the whole graph and find all the clusters */
     unordered_set<user_id> visited;
     for (User user : users) {
         if (visited.count(user.identifier)) continue;

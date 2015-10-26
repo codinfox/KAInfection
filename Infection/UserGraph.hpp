@@ -35,6 +35,10 @@ struct ClusterMapping {
     size_t position;
 };
 
+/**
+ * Model the users and their relationships as a graph
+ * @warning The class cannot be used before initialization. Use the constructor with parameters.
+ */
 class UserGraph {
     static const size_t total_aisles = 10;
     
@@ -50,8 +54,24 @@ class UserGraph {
     
 public:
     UserGraph() {}
+    /**
+     * Create an instance of UserGraph and initialize.
+     * @param graph The graph from ORM
+     */
     UserGraph(vector<User> const & graph);
+    
+    /**
+     * Given a user id, find all users infected by this user
+     * @param userID the id of the first infected user
+     * @return A set of all users infected
+     */
     unordered_set<user_id> findClusterByUser(user_id userID);
+    /**
+     * Try to infect a limited number of users
+     * @param amount The limit
+     * @return A set of all users infected
+     * @discussion This method uses a randomized algorithm and the returned number of users will usually larger than the specified limit. For detailed discussion, see README.
+     */
     unordered_set<user_id> findClusterByAmount(size_t amount);
 };
 

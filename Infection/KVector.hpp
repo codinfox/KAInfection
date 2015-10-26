@@ -14,6 +14,9 @@
 #include <cstdlib>
 #include <ctime>
 
+/**
+ * A vector with better remove performance (like linkedlist) and easier to serilize (like array).
+ */
 template <typename T>
 class KVector {
     std::vector<T> container;
@@ -27,7 +30,16 @@ public:
     void remove(size_t pos);
     bool empty() const;
     void clear();
+    /**
+     * Randomly pick one element from the vector.
+     * @return An element picked from the vector. If no one is picked, the default T() will be returned. This requires T() be the invalid case.
+     */
     T randomPick();
+    /**
+     * Randomly pick one element from the vector with predicates.
+     * @param A predicate, which accepts one element (with type of T) and returns true (if should pick) or false (if should not pick)
+     * @return An element picked from the vector. If no one is picked, the default T() will be returned. This requires T() be the invalid case.
+     */
     template<typename Pred>
     T randomPick(Pred const& pred);
 };
